@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="CZ">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style_min.css">
+    <!-- <link rel="stylesheet" href="animation.css"> -->
+    <script src="detectIE.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Wendy+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    
+    <title>Portfolio</title>
+</head>
+<body>
+
+
+
+
+    <div id="imagepreview">
+        <a class="close" onclick="closeelement()">&times;</a>
+        <div id="previewinside">
+            <div class="arrowBlockL" onclick="moveBack()">
+                <div class="movearrows_image" style="justify-self: flex-start;">&lt</div>
+            </div>
+            <img id="bigImage" src="">
+            <div class="imgTextContainer">
+                <p id="imgText"></p>
+                <div id="imgPopis" class="projecttext"></div>
+            </div>
+            <div class="arrowBlockR" onclick="moveNext()">
+                <div class="movearrows_image" style="justify-self: flex-end;">&gt</div>
+            </div>
+        </div>
+    </div>
+    <header>
+        <a href="" id="logo">MK .</a>
+            <ul id="navbar">
+                <li><a href="">HOME</a></li>
+                <li><a onclick="animateToElement('#oddil_01')">ABOUT</a></li>
+                <li><a onclick="animateToElement('#oddil_02')">MECHANICAL PROJECTS</a></li>
+                <li><a onclick="animateToElement('#oddil_03')">IT PROJECTS</a></li>
+                <li><a onclick="animateToElement('#oddil_04')">CONTACT</a></li>
+            </ul>
+    </header>
+    <article id="uvod">
+        <div id="uvod_part1">
+            <div class="info">
+                <div class="nadpis">Mechanical Engineer</div>
+                <ul class="positionInfo">
+                    <li>Vývoj mechanických zařízení</li>
+                    <li>Prototypová konstrukce</li>
+                    <li>3D Tisk</li>
+                </ul>
+                
+            </div>
+            <div class="photo"></div>
+            <div class="arrows"><img style="width: 320px;" src="img/arrows02.png"></div>
+            <div class="info">
+                <div class="nadpis">WEB Developer</div>
+                <ul class="positionInfo">
+                    <li>Tvorba webových stránek</li>
+                    <li>Tvorba asynchronních aplikací</li>
+                </ul>
+            </div>
+        </div>
+    </article>
+
+    <script>
+        if (detectIE()) {
+        document.querySelector(".arrows").style.display="none";
+    }
+    </script>
+
+    <article id="oddil_01">
+        <h1 style="width: 100%;">Ing. Martin Krajča</h1>
+        <div>
+            <p id="main">Přestože jsem vystudovaný strojní inženýr se specializací na stavbu strojních zařízení, jsem velký nadšenec pro tvorbu webových aplikací.</p>
+            <p id="aboutMe">Již při výběru střední školy jsem váhal, zda-li se vydám směrem strojařiny nebo IT. Mezi mé záliby patřil jednak vývoj módů do her, ale také výroba funkčních 3D modelů. Nakonec zvítězila cesta 3D modelování a po střední škole jsem pokračoval na vysokou.  Během svého studia jsem se snažil získat drahocennou praxi, kterou po škole využiji. Již po několika letech praxe jsem však zjistil, že práce konstruktéra je skvělá a zábavná práce, ale není patřičně ohodnocena. To mě přimělo k myšlence vrátit se zpět do minulosti, kdy jsem se rozhodoval kterým směrem se vydám. Jelikož jsem měl nějaké základy tvorby webových stránek již ze střední školy a pojmy jako "cyklus" či "konstruktor" mi byly známé, začal jsem prohlubovat své znalosti studiem ve volném čase. Zadarmo jsem vytvářel webové stránky pro známé a pracoval na svých projektech.</p>
+        </div>
+        <div id="skills">
+            <div class="skill">
+                <div class="skill_name">HTML</div>
+                <div class="progress_line">
+                    <div class="rank"></div>
+                </div>
+                <div class="rank_value"></div>
+            </div>
+            <div class="skill">
+                <div class="skill_name">CSS</div>
+                <div class="progress_line">
+                    <div class="rank"></div>
+                </div>
+                <div class="rank_value"></div>
+            </div>
+            <div class="skill">
+                <div class="skill_name">Javascript</div>
+                <div class="progress_line">
+                    <div class="rank"></div>
+                </div>
+                <div class="rank_value"></div>
+            </div>
+            <div class="skill">
+                <div class="skill_name">Vue.js</div>
+                <div class="progress_line">
+                    <div class="rank"></div>
+                </div>
+                <div class="rank_value"></div>
+            </div>
+            <div class="skill">
+                <div class="skill_name">Git</div>
+                <div class="progress_line">
+                    <div class="rank"></div>
+                </div>
+                <div class="rank_value"></div>
+            </div>
+            <div class="skill">
+                <div class="skill_name">Node.js</div>
+                <div class="progress_line">
+                    <div class="rank"></div>
+                </div>
+                <div class="rank_value"></div>
+            </div>
+        </div>
+    </article>
+    <article id="oddil_02">
+        <div id="oddil_02_part1"><h2>Mechanical projects</h2></div>
+        <p class="popis_branch">Níže je možné vidět ukázku z mých konstrukčních projektů. Realizované výrobky byly vytvořeny jako nekomerční prototypy 3D tiskem, nebo přesným litím do skořepinové formy.</p>
+        <div id="oddil_02_part2">
+            <div class="project">
+                <div class="headdiv"><div class="nadpis">Peristaltic pump</div></div>
+                <div class="preview">
+                    <a onclick="prevImg(peristaltic,0)" class="movearrows">&lt</a>
+                    <img id="peristaltic_container" class="IMG_container" onclick="imagezoom(peristaltic)" src="./img/Persitaltic_01.png">
+                    <a onclick="nextImg(peristaltic,0)" class="movearrows">&gt</a>
+                </div>
+                <p class="projectInfo">Konstrukční verze v1</p>
+                <p class="projecttext">Mezi moje projekty s fyzickou realizací patří například peristaltické čerpadlo pro dopravu tekutin bez kontaminace. Rám je opatřen chladícími žebry pro odvod tepla.</p>
+            </div>
+            <div class="project">
+                <div class="headdiv"><div class="nadpis">Bladeless fan</div></div>
+                <div class="preview">
+                    <a onclick="prevImg(bladeless,1)" class="movearrows">&lt</a>
+                    <img id="bladeless_container" class="IMG_container" onclick="imagezoom(bladeless)" src="./img/Bladeless_01.png">
+                    <a onclick="nextImg(bladeless,1)" class="movearrows">&gt</a>
+                </div>
+                <p class="projectInfo">Bezlopatkový ventilátor</p>
+                <p class="projecttext">Inspiraci pro výrobu vlastního bezlopatkového ventilátoru jsem našel u společnosti Dyson. Celý ventilátor je vyroben pomocí 3D tisku.</p>
+            </div>
+            <div class="project">
+                <div class="headdiv"><div class="nadpis">Other</div></div>
+                <div class="preview">
+                    <a onclick="prevImg(others,2)" class="movearrows">&lt</a>
+                    <img id="bladeless_container" class="IMG_container" onclick="imagezoom(others)" src="./img/BC_CS.png">
+                    <a onclick="nextImg(others,2)" class="movearrows">&gt</a>
+                </div>
+                <p class="projectInfo">Bakalářská práce</p>
+                <p class="projecttext">Zadáním mé bakalářské práce bylo navrhnout malou stolní kotoučovou pilu pro dřevozpracující průmysl. Pila je vybavena mechanismy pro naklápění a zvedání kotouče. Z technologického hlediska koncept kombinuje vstřikovaný plast a hliník.</p>
+            </div>
+        </div>
+    </article>
+    <article id="oddil_03">
+        <div id="oddil_02_part1"><h2>IT projects</h2></div>
+        <p class="popis_branch">Veškerý svůj volný čas věnuji studiu webových technologií, vývoji webových stránek a aplikací. Níže se nachází ukázky z mé tvorby. Aktuálně zlepšuji své nedostatky v JS a podrobněji studuji framework Vue.js.</p>
+        <div id="oddil_03_IT">
+            <div class="project">
+                <div class="headdiv"><div class="nadpis">Web development</div></div>
+                <div class="preview">
+                    <a onclick="prevImg(webdev,3)" class="movearrows">&lt</a>
+                    <img id="peristaltic_container" class="IMG_container" onclick="imagezoom(webdev)" src="./img/web_RC_01.png">
+                    <a onclick="nextImg(webdev,3)" class="movearrows">&gt</a>
+                </div>
+                <p class="projectInfo">Webové stránky</p>
+                <p class="projecttext">Tvorba webových stránek s jednoduchým designem na přání zákazníka. Na obrázku je zobrazena úvodní stránka a podstránka. Vývojem této webové stránky jsem si prohloubil znalosti nejen HTML a CSS, ale taky znalosti JavaScriptu, ve kterém jsou napsány klíčové funkce.</p>
+            </div>
+            <div class="project">
+                <div class="headdiv"><div class="nadpis">CANVAS game</div></div>
+                <div class="preview">
+                    <a onclick="prevImg(canvas_game,4)" class="movearrows">&lt</a>
+                    <img id="bladeless_container" class="IMG_container" onclick="imagezoom(canvas_game)" src="./img/canvas_01.png">
+                    <a onclick="nextImg(canvas_game,4)" class="movearrows">&gt</a>
+                </div>
+                <p class="projectInfo">CANVAS game</p>
+                <p class="projecttext">Velmi jednoduchá hra vytvořená pomocí technologie CANVAS. Aplikace umožňuje spouštět závod dvou vozidel, kdy rychlost vozidel je náhodně generovaná veličina. Na této jednoduché hře jsem si osvojil základní práci s 2D plátnem.</p>
+            </div>
+            <div class="project">
+                <div class="headdiv"><div class="nadpis">Resume Builder</div></div>
+                <div class="preview">
+                    <a onclick="prevImg(CVweb,5)" class="movearrows">&lt</a>
+                    <img id="bladeless_container" class="IMG_container" onclick="imagezoom(CVweb)" src="./img/CVweb_01.png">
+                    <a onclick="nextImg(CVweb,5)" class="movearrows">&gt</a>
+                </div>
+                <p class="projectInfo">Aplikace pro tvorbu životopisu</p>
+                <p class="projecttext">Jedním z nejnovějších projektů, na kterém pracuji je tzv. Resume Builder. Aplikace je rozdělena na editační část a náhledovou část. Tato aplikace je vyvíjena pomocí frameworku Vue.js.</p>
+            </div>
+        </div>
+    </article>
+    <article id="oddil_04">
+        <div id="mail">
+            <img src="./img/mailimg_01.svg" alt="">
+            <a class="zatocimesi po_st">moc.liamg@92acjarkm</a>
+        </div>
+    </article>
+
+
+
+    
+    <script src="control.js"></script>
+
+</body>
+</html>
